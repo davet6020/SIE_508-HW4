@@ -1,7 +1,7 @@
 from Property import Property
 import random
 
-class RealEstateAgent:
+class Realtor:
   property_list = {}
 
   def __init__(self):
@@ -15,7 +15,7 @@ class RealEstateAgent:
   def listproperties(self, agent):
     self.none = None
     print("Agent - Rent - Property Type - Address")
-    for pid, pinfo in RealEstateAgent.property_list.items():
+    for pid, pinfo in Realtor.property_list.items():
       if pinfo['agent'] == agent:
         print("{: <7} {: <6} {: <15} {: <30}".format(pinfo['agent'], pinfo['rent'], pinfo['property_type'],
                                                      pinfo['address']))
@@ -29,6 +29,6 @@ class RealEstateAgent:
     self.rent = rent
 
     # Put the property values onto the Agent object
-    RealEstateAgent.pr = {'agent': self.agent, 'address': self.address,
+    Realtor.pr = {'agent': self.agent, 'address': self.address,
                           'property_type': self.property_type, 'rent': self.rent}
-    RealEstateAgent.property_list[self.propertiid] = RealEstateAgent.pr
+    Realtor.property_list[self.propertiid] = Realtor.pr

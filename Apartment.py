@@ -1,9 +1,8 @@
 import random
 
-class Apartment():
+class Apartment:
 
   def __init__(self):
-    # super().__init__()
     self.balcony = random.choice(['Yes', 'No'])
     self.laundry = random.choice(['Yes', 'No'])
 

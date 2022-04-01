@@ -1,9 +1,8 @@
 import random
 
-class House():
+class House:
 
   def __init__(self):
-    # super().__init__()
     self.num_stories = random.randint(0, 5)
     self.garage = random.choice(['Yes', 'No'])
     self.fenced_yard = random.choice(['Yes', 'No'])
