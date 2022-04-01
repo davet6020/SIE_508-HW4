@@ -1,22 +1,29 @@
-# init auto runs initialize property
+from House import House
+from Apartment import Apartment
+import random
 
 class Property:
 
   def __init__(self):
-    self.square_feet = None
-    self.num_bedrooms = None
-    self.num_bathrooms = None
-    self.rent = None
-    self.address = None
-    self.initializeproperty()
+    self.square_feet = int(random.randint(900, 5000))
+    self.num_bedrooms = int(self.square_feet / 1500)
+    self.num_bathrooms = int(self.square_feet / 1200)
+    self.rent = "{:.2f}".format(self.square_feet * 1.05)
+    self.property_type = random.choice(['Apartment', 'House'])
 
-  # Ask user for input
-  def initializeproperty(self):
-    self.address = input("Enter address (street and number, city, state, zip): ")
-    self.square_feet = int(input("Enter square feet: "))
-    self.num_bedrooms = int(input("Enter number of bedrooms: "))
-    self.num_bathrooms = int(input("Enter number of bathrooms: "))
-    self.rent = int(input("Enter rent amount per month: "))
+    if self.property_type == "Apartment":
+      ptype_info = Apartment()
+      self.unit = random.choice(['Apt ', 'Unit ', ''])
+      self.unit_info = self.unit + random.choice(['14G', '3C', 'J13', '221b', '10D', '42', '666', 'L7', '9'])
+    else:
+      ptype_info = House()
+      self.unit_info = ''
+
+    self.street_num = str(random.randint(1, 5000))
+    self.street_name = random.choice(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K']) + ' St.'
+    self.street_city = 'Washington, DC'
+    self.zip_code = int(random.randint(20001, 20012))
+    self.address = '{} {} {} {} {}'.format(self.street_num, self.street_name, self.unit_info, self.street_city, self.zip_code)
 
   # Print results of what is stored in this object
   def display(self):

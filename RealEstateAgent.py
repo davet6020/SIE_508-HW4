@@ -1,9 +1,11 @@
+from Property import Property
+import random
+
 class RealEstateAgent:
-  agents = ['Jewel', 'Tom']
   property_list = {}
 
   def __init__(self):
-    self.agent = None
+    self.agent = random.choice(['Avery', 'Jewell', 'Rose', 'Tom'])
     self.propertiid = None
     self.address = None
     self.property_type = None

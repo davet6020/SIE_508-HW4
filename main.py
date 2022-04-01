@@ -5,8 +5,6 @@ __what__ = "This is Homework Assignment 3"
 
 from RealEstateAgent import RealEstateAgent
 from Property import Property
-from House import House
-from Apartment import Apartment
 import random
 
 mls = {}
@@ -16,8 +14,6 @@ property_count = 0
 agent1 = RealEstateAgent()
 agent2 = RealEstateAgent()
 
-# Have user input 3 properties
-print("Input Three Properties")
 while property_count < 3:
   # By instantiating a Property object, you call Property.initializeproperty which asks for input
   p = Property()
@@ -28,17 +24,8 @@ while property_count < 3:
       mls['address'] = value
     if attr == 'rent':
       mls['rent'] = value
-
-  # Determine if Apartment or House and call that Class.initializeproperty method
-  AorH = input("Is this an Apartment or a House (A or H): ")
-  if AorH.upper() == "A":
-    a = Apartment()
-    # We need the property type for assigning it to the realtor
-    mls['property_type'] = 'Apartment'
-  else:
-    h = House()
-    # We need the property type for assigning it to the realtor
-    mls['property_type'] = 'House'
+    if attr == 'property_type':
+      mls['property_type'] = value
 
   # Time to assign property to realtor
   if (property_count % 2) == 0:
