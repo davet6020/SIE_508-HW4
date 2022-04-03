@@ -10,6 +10,7 @@ class Property:
     self.num_bathrooms = int(self.square_feet / 1200)
     self.rent = "{:.2f}".format(self.square_feet * 1.05)
     self.property_type = random.choice(['Apartment', 'House'])
+    self.rent_own = random.choice(['Purchase', 'Rent'])
 
     if self.property_type == "Apartment":
       self.ptype_info = Apartment()
